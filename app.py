@@ -26,10 +26,10 @@ if uploaded_file is not None:
     # Sidebar per filtrare i dati
     st.sidebar.title("Filtri")
     
-    fair_value_filter = st.sidebar.slider('Filtro per Fair Value (%)', float(df['Fair Value (%)'].min()), float(df['Fair Value (%)'].max()), (float(df['Fair Value (%)'].min()), float(df['Fair Value (%)'].max())))
-    z_score_filter = st.sidebar.slider('Filtro per Z-Score', float(df['Z-Score'].min()), float(df['Z-Score'].max()), (float(df['Z-Score'].min()), float(df['Z-Score'].max())))
-    f_score_filter = st.sidebar.slider('Filtro per F-Score', int(df['F-Score'].min()), int(df['F-Score'].max()), (int(df['F-Score'].min()), int(df['F-Score'].max())))
-    m_score_filter = st.sidebar.slider('Filtro per M-Score', float(df['M-Score'].min()), float(df['M-Score'].max()), (float(df['M-Score'].min()), float(df['M-Score'].max())))
+    fair_value_filter = st.sidebar.slider('Filtro per Fair Value (%) (> 0 Current price is below the Fair Value)', float(df['Fair Value (%)'].min()), float(df['Fair Value (%)'].max()), (float(df['Fair Value (%)'].min()), float(df['Fair Value (%)'].max())))
+    z_score_filter = st.sidebar.slider('Filtro per Z-Score (> 2.99 Safe Zone - Low Likelihood of Bankruptcy)', float(df['Z-Score'].min()), float(df['Z-Score'].max()), (float(df['Z-Score'].min()), float(df['Z-Score'].max())))
+    f_score_filter = st.sidebar.slider('Filtro per F-Score (Piotroski ≥ 6 Strong Zone)', int(df['F-Score'].min()), int(df['F-Score'].max()), (int(df['F-Score'].min()), int(df['F-Score'].max())))
+    m_score_filter = st.sidebar.slider('Filtro per M-Score (Beneish < 2.22 Unlikely Profit Manipulation)', float(df['M-Score'].min()), float(df['M-Score'].max()), (float(df['M-Score'].min()), float(df['M-Score'].max())))
     value_generation_filter = st.sidebar.multiselect('Filtro per Value Generation', df['Value Generation'].unique(), df['Value Generation'].unique())
     
     # Applicazione dei filtri
