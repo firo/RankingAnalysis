@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Titolo dell'applicazione
-st.title('Analisi della Classifica delle Azioni')
+st.title('Analisi della Classifica delle Azioni per Indice')
 
 # Caricamento del file CSV
 uploaded_file = st.file_uploader("Carica il file CSV", type="csv")
